@@ -20,13 +20,13 @@ external makeConnectOptions:
   "";
 
 /** Attach Puppeteer to an existing Chromium instance. */
-[@bs.val] [@bs.module "puppeteer"]
+[@bs.val] [@bs.module "puppeteer-extra"]
 external connect:
   (~options: connectOptions=?, unit) => Js.Promise.t(Browser.t) =
   "";
 
 /** Path where Puppeteer expects to find bundled Chromium. */
-[@bs.val] [@bs.module "puppeteer"]
+[@bs.val] [@bs.module "puppeteer-extra"]
 external executablePath: unit => string = "";
 
 module IgnoreDefaultArgs = {
@@ -128,7 +128,7 @@ let makeLaunchOptions =
   );
 
 /** Launch a browser instance. */
-[@bs.val] [@bs.module "puppeteer"]
+[@bs.val] [@bs.module "puppeteer-extra"]
 external launch: (~options: launchOptions=?, unit) => Js.Promise.t(Browser.t) =
   "";
 
@@ -148,7 +148,7 @@ module DefaultArgsOptions = {
 };
 
 /** The default flags that Chromium will launch with. */
-[@bs.val] [@bs.module "puppeteer"]
+[@bs.val] [@bs.module "puppeteer-extra"]
 external defaultArgs:
   (~options: DefaultArgsOptions.t=?, unit) => array(string) =
   "";
@@ -176,7 +176,7 @@ let makeBrowserFetcherOptions =
     (),
   );
 
-[@bs.val] [@bs.module "puppeteer"]
+[@bs.val] [@bs.module "puppeteer-extra"]
 external createBrowserFetcher:
   (~options: browserFetcherOptions=?, unit) => BrowserFetcher.t =
   "";
